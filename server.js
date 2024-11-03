@@ -4,12 +4,14 @@ import authRoutes from "./src/routes/auth.route.js";
 import movieRoutes from "./src/routes/movie.route.js";
 import tvRoutes from "./src/routes/tvshow.route.js";
 import searchRoutes from "./src/routes/search.route.js";
+import cors from "cors";
 import { connectDB } from "./src/config/db.config.js";
 import { ENV_VARS } from "./src/config/envVars.js";
 
 const app = express();
 const PORT = ENV_VARS.PORT || 5000;
 
+app.use(cors());
 app.use(express.json({ limit: "5mb" }));
 app.use(cookieParser());
 
