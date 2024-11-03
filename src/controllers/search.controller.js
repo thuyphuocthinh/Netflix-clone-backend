@@ -134,3 +134,5 @@ export async function removeItemFromSearchHistory(req, res) {
       .json({ success: false, message: "Internal Server Error" });
   }
 }
+
+// https://developer.themoviedb.org/reference/movie-top-rated-list
