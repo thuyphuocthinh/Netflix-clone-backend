@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import authRoutes from "./src/routes/auth.route.js";
 import movieRoutes from "./src/routes/movie.route.js";
+import tvRoutes from "./src/routes/tvshow.route.js";
 import { connectDB } from "./src/config/db.config.js";
 import { ENV_VARS } from "./src/config/envVars.js";
 
@@ -13,6 +14,7 @@ app.use(cookieParser());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/movie", movieRoutes);
+app.use("/api/v1/tv", tvRoutes);
 
 app.listen(PORT, () => {
   connectDB();
