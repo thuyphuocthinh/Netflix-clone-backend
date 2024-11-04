@@ -7,6 +7,8 @@ export const getTrending = async (req, res) => {
     );
     const randomMovie =
       data.results[Math.floor(Math.random() * data.results?.length)];
+    console.log(">>> movie: ", randomMovie);
+
     return res.status(200).json({
       success: true,
       content: randomMovie,
